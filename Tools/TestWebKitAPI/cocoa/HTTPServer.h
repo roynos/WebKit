@@ -82,7 +82,7 @@ public:
     void receiveBytes(CompletionHandler<void(Vector<uint8_t>&&)>&&, size_t minimumSize = 1) const;
     void receiveHTTPRequest(CompletionHandler<void(Vector<char>&&)>&&, Vector<char>&& buffer = { }) const;
     void webSocketHandshake(CompletionHandler<void()>&& = { });
-    void terminate();
+    void terminate(CompletionHandler<void()>&& = { });
     void cancel();
 
 private:
